@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="/static/togglepwd.js"></script>
+</head>
+
+<body><br /><br />
+  <div align="center">
+    <div align="center" class="border">
+      <div class="header">
+        <img style="max-width: 40%; height: auto;" src="{{url_for('static', filename='lora.png')}}" align="middle" />
+      </div>
+      <h2 class="word">
+        <form action="{{ url_for('register') }}" method="post">
+          <div class="msg">{{ msg }}</div>
+          <i style="margin-right: 10px;" class="fa fa-user"></i><input id="username" name="username" type="text"
+            placeholder="Enter Username" class="textbox" /></br></br>
+          <i style="margin-right: 10px;" class="fa fa-lock"></i><input id="pwd" name="password" type="password"
+            placeholder="Enter Password" class="textbox" /><i class="fa fa-eye" id="togglePassword"
+            style="margin-left: -25px; cursor: pointer;"></i></br></br>
+          <i style="margin-right: 2px;" class="fa fa-envelope"></i><input id="email" name="email" type="text"
+            placeholder="Enter Email" class="textbox" /></br></br>
+          <input type="submit" class="btn" value="Register"></br>
+        </form>
+      </h2>
+      <p class="bottom">Already have an account? Login <a class="bottom" href="{{url_for('login')}}">here</a>.</p>
+    </div>
+  </div>
+</body>
+
+</html>
